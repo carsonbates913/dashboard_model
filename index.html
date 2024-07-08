@@ -12,9 +12,9 @@
       <div class="header-navbar">
         <form class="header-searchbar">
           <button type="submit" class="search-button">
-            <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+            <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #532a09;"></i>
           </button>
-          <input class="searchbar" type="search" />
+          <input class="searchbar" type="search" placeholder="Search" />
         </form>
         <div class="header-notifs">
           <i class="fa-solid fa-cloud-moon fa-xl"></i>
@@ -24,15 +24,15 @@
       </div>
       <div class="header-welcome">
         <div class="welcome-profile">
-          <i class="fa-solid fa-frog fa-2xl"></i>
+          <img class="profile-image" src="images/PixelSky.jpeg">
           <div class="welcome-message">
-            <p>Hello,</p>
-            <p>Carson</p>
+            <p style="font-size: 15px; height: 17px; margin: 10px 0px 0px 0px;">Hello,</p>
+            <p style="font-size: 20px; margin-top: 0px;">Carson</p>
           </div>
         </div>
         <div class="welcome-buttons">
-          <button>+ Add Project</button>
-          <button>Share</button>
+          <button >+ Add Project</button>
+          <button >Share</button>
         </div>
       </div>
     </div>
@@ -77,7 +77,7 @@
     </div>
     <div class="content-main">
       <div class="left-main">
-        <p>Your Projects</p>
+        <p class="project-title">Your Projects</p>
         <div class="projects-grid">
           <div class="item">
             <div class="item-title">
@@ -180,21 +180,59 @@
         </div>
       </div>
       <div class="right-main">
-        <div class="assignments">
-          <p class="assignments-header">Assignments</p>
-          <div class="assignments-grid">
-            <div class="assignments-item">hello</div>
-            <div class="assignments-item">hello</div>
-            <div class="assignments-item">hello</div>
+        <div class="todoList">
+          <p class="todoList-header">To-Do List</p>
+          <div class="todoList-grid">
+            <div class="todoList-item">
+              <p class="todo-title">
+                Learn React
+              </p>
+              <p class="todo-content">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisquiliae fermentum rutilans, quisque curabitur efficitur ultricies numquam.
+              </p>
+            </div>
+            <div class="todoList-item">
+              <p class="todo-title">
+                Learn React
+              </p>
+              <p class="todo-content">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisquiliae fermentum rutilans, quisque curabitur efficitur ultricies numquam.
+              </p>
+            </div>
+            <div class="todoList-item">
+              <p class="todo-title">
+                Learn React
+              </p>
+              <p class="todo-content">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisquiliae fermentum rutilans, quisque curabitur efficitur ultricies numquam.
+              </p>
+            </div>
           </div>
         </div>
         <div class="feed">
           <p class="feed-header">Feed</p>
           <div class="feed-grid">
             <div class="feed-item">
+              <img class="feed-profile" src="images/Profile_1.png">
+              <div class="feed-post">
+                <p class="feed-user">@Hesward</p>
+                <p class="feed-message">"What a cool website!"</p>
+              </div>
             </div>
-            <div class="feed-item">hello</div>
-            <div class="feed-item">hello</div>
+            <div class="feed-item">
+              <img class="feed-profile" src="images/Profile_2.webp">
+              <div class="feed-post">
+                <p class="feed-user">@Kaleb</p>
+                <p class="feed-message">"Love the new additions!"</p>
+              </div>
+            </div>
+            <div class="feed-item">
+              <img class="feed-profile" src="images/Profile_3.webp">
+              <div class="feed-post">
+                <p class="feed-user">@Chrissy</p>
+                <p class="feed-message">"Can you code me something like this"</p>
+              </div>
+            </div>
           </div>
         </div>
         </div>

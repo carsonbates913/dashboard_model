@@ -6,19 +6,22 @@ p {
   margin: 0;
 }
 
+
+
 body{
   padding: 150px 0px 0px 300px;
   margin: 0px;
   height: 100vh;
-  background-color: #dee2e6;
+  background-color: #f2f2f2;
 }
 .header-main {
-  background-color: #00b4d8;
+  background-color: white;
   position: fixed;
   top: 0px;
   left: 300px;
   right: 0;
   height: 150px;
+  box-shadow: 0px 5px 3px 0px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-flow: column nowrap;
 }
@@ -36,15 +39,16 @@ body{
   display: flex;
   flex-flow: row nowrap;
   margin: 0px 50px;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
 .search-button {
   height: 30px;
-  border: none;
   padding: 0px 15px;
   border-radius: 10px 0px 0px 10px;
+  border: .5px solid;
+  background-color: #f2f2f2;
 }
 
 .searchbar {
@@ -52,8 +56,11 @@ body{
   height: 30px;
   border-radius: 0px 10px 10px 0px;
   outline: none;
-  border: none;
+  border: .5px solid;
   width: 0;
+  max-width: 600px;
+  padding-left: 20px;
+  font-family: baskerville, sans-serif;
 }
 
 .header-notifs {
@@ -71,17 +78,52 @@ body{
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: end; 
+  margin-bottom: 10px;
 }
 
 .welcome-profile {
   display: flex;
   flex-flow: row nowrap;
+  align-items: center; 
   margin-left: 30px;
+}
+
+.profile-image {
+  height: 70px;
+  width: 70px;
+  object-fit: cover;
+  border-radius: 50px;
+}
+
+.welcome-message {
+  font-family: roca, sans-serif;
+  margin-left: 10px;
 }
 
 .welcome-buttons {
   margin-bottom: 10px;
-  margin-right: 220px;
+  margin-right: 175px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+}
+
+.welcome-buttons button {
+  height: 36px;
+  width: auto;
+  background-color: #00b4d8;
+  color: white;
+  border: none;
+  padding: 5px 15px 2px 15px;
+  font-family: roca, sans-serif;
+  border-radius: 40px;
+  box-shadow: 3px 3px 7px 0px rgba(0, 0, 0, .3);
+}
+
+.welcome-buttons button:hover {
+  cursor:pointer;
 }
 
 .nav-main {
@@ -115,9 +157,8 @@ body{
   align-items: center;
 }
 
-.nav-item:hover {
-  cursor: pointer;
-  animation: jump-shake 3s;
+.nav-item:hover > :first-child {
+  animation: jump-shake 2s;
 }
 
 @keyframes jump-shake {
@@ -125,10 +166,10 @@ body{
     transform: translateY(0) rotate(0);
 }
 10%, 30%, 50%, 70%, 90% {
-    transform: translateY(-20px) rotate(-5deg);
+    transform: translateY(-10px) rotate(-5deg);
 }
 20%, 40%, 60%, 80% {
-    transform: translateY(-10px) rotate(5deg);
+    transform: translateY(-5px) rotate(5deg);
 }
 }
 
@@ -153,8 +194,15 @@ body{
   flex: 7;
 }
 
+.project-title {
+  margin: 0;
+  font-family: baskerville, sans-serif;
+  font-size: 25px;
+
+}
+
 .projects-grid {
-  margin: 40px 40px 0 40px;
+  margin: 30px 40px 0 40px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 200px;
@@ -250,37 +298,89 @@ body{
   flex: 3;
 }
 
-.assignments,
+.todoList,
 .feed {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  margin-top: 25px;
 }
 
-.assignments-header,
+.todoList-header,
 .feed-header {
- padding-top: 40px;
+ padding-bottom: 10px;
+ font-family: baskerville, sans-serif;
+ font-size: 20px;
 }
 
-.assignments-grid,
+.todoList-grid,
 .feed-grid {
   display: grid; 
   width: 100%;
   grid-template-columns: 1fr;
-  grid-template-rows: 80px;
-  grid-auto-rows: 80px;
+  grid-template-rows: 90px;
+  grid-auto-rows: 90px;
   border-radius: 10px;
   overflow: hidden;
-  padding: 20px;
+  padding: 10px 30px;
   background-color: white;
 }
 
-.assignments-item {
-}
+.todoList-item,
+.feed-item {
+  padding: 10px 0px;
+  overflow-y: scroll;
+} 
 
-.assignments-item:not(:last-child),
+.todoList-item:not(:last-child),
 .feed-item:not(:last-child)
  {
   border-bottom: 2px solid grey;
+}
+
+.todo-title {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+.feed-item {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: start;
+  align-items: center;
+  overflow: hidden;
+}
+
+.todo-content {
+  font-size: .8rem;
+  color: rgb(74, 73, 73);
+}
+
+.feed-profile {
+  height: 64px;
+  width: 64px;
+  border-radius: 100px;
+  object-fit: cover;
+}
+
+.feed-post {
+  margin-left: 10px;
+  flex: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: start;
+  align-items: start;
+  font-family: baskerville;
+  height: 100%;
+}
+
+.feed-user {
+  color: black;;
+  padding: 2px 0px 6px 0px; 
+}
+
+.feed-message {
+  color: rgb(74, 73, 73);
 }
